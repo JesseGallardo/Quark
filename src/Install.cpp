@@ -13,10 +13,12 @@ using namespace std;
 
 // Linux install process
 void linuxInstall() {
-    system("wget https://github.com/atom/atom/releases/download/v1.26.0/atom-amd64.deb"); // Get Atom v1.26 from Github
+    system("wget https://github.com/atom/atom/releases/download/v1.26.0/atom-amd64.deb"); // Get Atom v1.26 from Github // TODO: Update URL dynamically for new releases
     system("mkdir -p Atom/Atom-Linux"); // Create directory for files
     system("dpkg -x atom-amd64.deb Atom/Atom-Linux"); // Unpackage Atom
     system("rm atom-amd64.deb"); // Remove package
+
+    system("wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable"); // Get launcher executable from Github // TODO: Change branch to master once ready to merge
 }
 
 // Starts the program, prints information about the purpose, and asks the user to confirm install
@@ -76,8 +78,13 @@ void installSelect() {
 
 }
 
+// Cleanup files from installation
+void cleanup() {
+    system("rm -f Install");
+}
 
 int main() {
     confirm();
     installSelect();
+    cleanup();
 }
