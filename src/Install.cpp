@@ -36,7 +36,40 @@ void confirm() {
         }
     }
 }
+void installSelect() {
+    cout << "Please select which version to install.\n"
+         << "(1) Linux/Debian\n"
+         << "(2) Windows (coming soon)\n"
+         << "(q) Quit\n";
+
+    string answer;
+    bool inputting = true;
+
+    while (inputting) {
+        getline(cin, answer);
+
+        if (answer == "1") { // Linux Install
+            inputting = false;
+            linuxInstall(); // Install Linux Version
+        }
+        else if (answer == "2") { // Windows Install
+            cout << "This version is coming soon. Please select another version\n"
+                 << "or press (q) to quit.\n";
+        }
+        else if (answer == "Q" || answer "q") { // Quit
+            exit(0);
+        }
+        else {
+            cout << "\n";
+        }
+    }
+
+}
+void linuxInstall() {
+
+}
 
 int main() {
     confirm();
+    installSelect();
 }
