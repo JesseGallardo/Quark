@@ -11,6 +11,14 @@
 #include <string>
 using namespace std;
 
+// Linux install process
+void linuxInstall() {
+    system("wget https://github.com/atom/atom/releases/download/v1.26.0/atom-amd64.deb"); // Get Atom v1.26 from Github
+    system("mkdir -p Atom/Atom-Linux"); // Create directory for files
+    system("dpkg -x atom-amd64.deb Atom/Atom-Linux"); // Unpackage Atom
+    system("rm atom-amd64.deb"); // Remove package
+}
+
 // Starts the program, prints information about the purpose, and asks the user to confirm install
 void confirm() {
     cout << "Atom Portable Installer\n"
@@ -36,6 +44,8 @@ void confirm() {
         }
     }
 }
+
+// Allows user to select which version of Atom to install
 void installSelect() {
     cout << "Please select which version to install.\n"
          << "(1) Linux/Debian\n"
@@ -56,7 +66,7 @@ void installSelect() {
             cout << "This version is coming soon. Please select another version\n"
                  << "or press (q) to quit.\n";
         }
-        else if (answer == "Q" || answer "q") { // Quit
+        else if (answer == "Q" || answer == "q") { // Quit
             exit(0);
         }
         else {
@@ -65,9 +75,7 @@ void installSelect() {
     }
 
 }
-void linuxInstall() {
 
-}
 
 int main() {
     confirm();
