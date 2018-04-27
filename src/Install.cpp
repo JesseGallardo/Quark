@@ -18,6 +18,7 @@ void linuxInstall() {
     system("dpkg -x atom-amd64.deb Atom/Atom-Linux"); // Unpackage Atom
     system("rm atom-amd64.deb"); // Remove package
 
+    system("mkdir -p Atom/.atom"); // Create portable .atom folder
     system("wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable"); // Get launcher executable from Github // TODO: Change branch to master once ready to merge
 }
 
