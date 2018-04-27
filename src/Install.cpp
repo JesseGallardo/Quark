@@ -4,7 +4,7 @@
  * Licensed under MIT License
  *
  * Updated April 27, 2018
-*/
+ */
 
 #include <stdlib.h>
 #include <iostream>
