@@ -5,4 +5,4 @@ Install: Install.cpp
 	cd ..; g++ -g -o Install $(I_SRC)
 
 Atom-Portable-Linux: Atom-Portable-Linux.cpp
-	cd ..; g++ -g -o Atom-Portable-Linux $(I_SRC)
+	cd ..; g++ -g -o Atom-Portable-Linux $(E_SRC)
