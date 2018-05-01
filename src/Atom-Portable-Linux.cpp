@@ -9,6 +9,9 @@
 #include <stdlib.h>
 
 int main() {
+
+    system("rm Install");
+
     system("export ATOM_HOME=\"$PWD/Atom/.atom\""); // Set .atom directory to portable version
     system("$PWD/Atom/Atom-Linux/usr/share/atom/atom"); // Run atom from portable version
 
