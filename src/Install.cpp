@@ -12,8 +12,12 @@
 #include <string>
 using namespace std;
 
+string installType;
+
 // Linux install process
 void linuxInstall() {
+    installType = "Linux";
+
     cout << "Getting latest version of Atom...\n" << "wget https://github.com/atom/atom/releases/download/v1.26.0/atom-amd64.deb\n";
     system("wget https://github.com/atom/atom/releases/download/v1.26.0/atom-amd64.deb"); // Get Atom v1.26 from Github // TODO: Update URL dynamically for new releases
 
@@ -34,7 +38,7 @@ void linuxInstall() {
     cout << "\n";
 
     cout << "Getting latest version of Atom-Portable launcher...\n" << "wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable-Linux\n";
-    system("wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable"); // Get launcher executable from Github // TODO: Change branch to master once ready to merge
+    system("wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable-Linux"); // Get launcher executable from Github // TODO: Change branch to master once ready to merge
 }
 
 // Starts the program, prints information about the purpose, and asks the user to confirm install
@@ -95,11 +99,11 @@ void installSelect() {
 }
 
 // Briefs the user on how to go forward with program
-void done() {
+void done(string installType) {
     cout << "-------------------------------------------------------------\n"
          << "\n"
          << "The installation is complete!\n"
-         << "You may now use the Atom-Portable executable to launch Atom.\n"
+         << "You may now use the Atom-Portable-" << installType << " executable to launch Atom.\n"
          << "\n"
          << "If you would like to use your own .atom configuration folder,\n"
          << "replace the folder Atom/.atom with your own.\n"
@@ -112,5 +116,5 @@ void done() {
 int main(int argc, char **argv) {
     confirm();
     installSelect();
-    done();
+    done(installType);
 }
