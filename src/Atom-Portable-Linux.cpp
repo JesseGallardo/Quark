@@ -6,7 +6,7 @@
  * Updated April 27, 2018
  */
 
- #include <stdlib.h>
+#include <stdlib.h>
 
 int main() {
     system("export ATOM_HOME=\"$PWD/Atom/.atom\""); // Set .atom directory to portable version

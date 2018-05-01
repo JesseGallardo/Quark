@@ -33,7 +33,7 @@ void linuxInstall() {
     system("mkdir -p Atom/.atom"); // Create portable .atom folder
     cout << "\n";
 
-    cout << "Getting latest version of Atom-Portable launcher...\n" << "wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable\n";
+    cout << "Getting latest version of Atom-Portable launcher...\n" << "wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable-Linux\n";
     system("wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable"); // Get launcher executable from Github // TODO: Change branch to master once ready to merge
 }
 
