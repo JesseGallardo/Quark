@@ -13,6 +13,7 @@
 using namespace std;
 
 string installType;
+string LAST_MODIFIED = "5/16/2018";
 
 // Linux install process
 void linuxInstall() {
@@ -44,7 +45,8 @@ void linuxInstall() {
 // Starts the program, prints information about the purpose, and asks the user to confirm install
 void confirm() {
     cout << "Atom Portable Installer\n"
-         << "Created by Andrew Davis\n\n"
+         << "Created by Andrew Davis\n"
+         << "Last modified: " + LAST_MODIFIED + "\n\n" 
          << "This executable will install the Atom editor\n"
          << "to the current directory and optimize it for\n"
          << "portablility. Continue (Y/n)?\n";
