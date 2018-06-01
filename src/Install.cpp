@@ -3,7 +3,7 @@
  * Created by Andrew Davis (github.com/andrewsdavis)
  * Licensed under MIT License
  *
- * Updated April 27, 2018
+ * Updated June 1, 2018
  */
 
 #include <stdlib.h> // system()
@@ -13,7 +13,7 @@
 using namespace std;
 
 string installType;
-string LAST_MODIFIED = "5/16/2018";
+string LAST_MODIFIED = "6/1/2018";
 
 // Linux install process
 void linuxInstall() {
