@@ -38,15 +38,15 @@ void linuxInstall() {
     system("mkdir -p Atom/.atom"); // Create portable .atom folder
     cout << "\n";
 
-    cout << "Getting latest version of Atom-Portable launcher...\n" << "wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable-Linux\n";
-    system("wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable-Linux"); // Get launcher executable from Github // TODO: Change branch to master once ready to merge
+    cout << "Getting latest version of Atom-Portable launcher...\n" << "wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable-Linux.sh\n";
+    system("wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable-Linux.sh"); // Get launcher executable from Github // TODO: Change branch to master once ready to merge
 }
 
 // Starts the program, prints information about the purpose, and asks the user to confirm install
 void confirm() {
     cout << "Atom Portable Installer\n"
          << "Created by Andrew Davis\n"
-         << "Last modified: " + LAST_MODIFIED + "\n\n" 
+         << "Last modified: " + LAST_MODIFIED + "\n\n"
          << "This executable will install the Atom editor\n"
          << "to the current directory and optimize it for\n"
          << "portablility. Continue (Y/n)?\n";
