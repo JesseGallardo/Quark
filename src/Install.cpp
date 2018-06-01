@@ -7,7 +7,6 @@
  */
 
 #include <stdlib.h> // system()
-#include <unistd.h>
 #include <iostream> // cout & cin
 #include <string>
 using namespace std;
