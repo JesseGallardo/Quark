@@ -18,8 +18,8 @@ string LAST_MODIFIED = "6/1/2018";
 void linuxInstall() {
     installType = "Linux";
 
-    cout << "Getting latest version of Atom...\n" << "wget https://github.com/atom/atom/releases/download/v1.26.0/atom-amd64.deb\n";
-    system("wget https://github.com/atom/atom/releases/download/v1.26.0/atom-amd64.deb"); // Get Atom v1.26 from Github // TODO: Update URL dynamically for new releases
+    cout << "Getting latest version of Atom...\n" << "wget https://github.com/atom/atom/releases/download/v1.27.2/atom-amd64.deb\n";
+    system("wget https://github.com/atom/atom/releases/download/v1.27.2/atom-amd64.deb"); // Get Atom v1.27.2 from Github // TODO: Update URL dynamically for new releases
 
     cout << "Creating folder structure...\n" << "mkdir -p Atom/Atom-Linux\n";
     system("mkdir -p Atom/Atom-Linux"); // Create directory for files
@@ -37,8 +37,8 @@ void linuxInstall() {
     system("mkdir -p Atom/.atom"); // Create portable .atom folder
     cout << "\n";
 
-    cout << "Getting latest version of Atom-Portable launcher...\n" << "wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable-Linux.sh\n";
-    system("wget https://github.com/andrewsdavis/Atom-Portable/raw/cpp-testing/Atom-Portable-Linux.sh"); // Get launcher executable from Github // TODO: Change branch to master once ready to merge
+    cout << "Getting latest version of Atom-Portable launcher...\n" << "wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Atom-Portable-Linux.sh\n";
+    system("wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Atom-Portable-Linux.sh"); // Get launcher executable from Github // TODO: Change branch to master once ready to merge
 }
 
 // Starts the program, prints information about the purpose, and asks the user to confirm install
