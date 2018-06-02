@@ -41,8 +41,8 @@ void linuxInstall() {
     cout << "Getting latest version of Atom-Portable launcher...\n" << "wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Atom.sh\n";
     system("wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Atom.sh"); // Get launcher executable from Github
 
-    cout << "Adding executable permissions to launcher..." << "chmod u+x Atom.sh";
-    system("chmod u+x Atom-Portable-Linux.sh"); // Add executable permissions to the launcher
+    cout << "Adding executable permissions to launcher..." << "chmod a+x Atom.sh";
+    system("chmod a+x Atom.sh"); // Add executable permissions to the launcher
 }
 
 // Starts the program, prints information about the purpose, and asks the user to confirm install
