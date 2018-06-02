@@ -1,5 +1,5 @@
 #!/bin/bash
-# Atom Portable Launcher v0.5.1
+# Atom Portable Launcher v0.6
 # Created by Andrew Davis (github.com/andrewsdavis)
 # Licensed under MIT License
 #
