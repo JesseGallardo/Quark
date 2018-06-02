@@ -1,5 +1,5 @@
 /*
- * Atom Portable Installer v0.5.1
+ * Atom Portable Installer v0.6
  * Created by Andrew Davis (github.com/andrewsdavis)
  * Licensed under MIT License
  *
@@ -12,8 +12,8 @@
 using namespace std;
 
 string installType;
-string LAST_MODIFIED = "6/1/2018";
-string VERSION = "0.5.1";
+string LAST_MODIFIED = "6/2/2018";
+string VERSION = "0.6";
 
 // Linux install process
 void linuxInstall() {
@@ -41,13 +41,14 @@ void linuxInstall() {
     cout << "Getting latest version of Atom-Portable launcher...\n" << "wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Atom.sh\n";
     system("wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Atom.sh"); // Get launcher executable from Github
 
-    cout << "Adding executable permissions to launcher..." << "chmod a+x Atom.sh";
+    cout << "Adding executable permissions to launcher...\n" << "chmod a+x Atom.sh\n";
     system("chmod a+x Atom.sh"); // Add executable permissions to the launcher
 }
 
 // Starts the program, prints information about the purpose, and asks the user to confirm install
 void confirm() {
-    cout << "Atom Portable Installer v" + VERSION + "\n"
+    cout << "Atom Portable Installer\n"
+         << "Version v" + VERSION + "\n"
          << "Created by Andrew Davis\n"
          << "Last modified: " + LAST_MODIFIED + "\n\n"
          << "This executable will install the Atom editor\n"
@@ -108,7 +109,7 @@ void done(string installType) {
     cout << "-------------------------------------------------------------\n"
          << "\n"
          << "The installation is complete!\n"
-         << "You may now use the Atom-Portable-" << installType << " executable to launch Atom.\n"
+         << "You may now use the Atom executable to launch Atom.\n"
          << "\n"
          << "If you would like to use your own .atom configuration folder,\n"
          << "replace the folder Atom/.atom with your own.\n"
