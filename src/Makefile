@@ -1,3 +1,9 @@
+# Atom Portable Makefile
+# Created by Andrew Davis (github.com/andrewsdavis)
+# Licensed under MIT License
+#
+# Updated June 2, 2018
+
 I_SRC=src/Install.cpp
 
 Install: Install.cpp
