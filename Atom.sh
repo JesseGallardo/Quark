@@ -1,7 +1,9 @@
 #!/bin/bash
-# Atom Portable Launcher
+# Atom Portable Launcher v0.5.1
 # Created by Andrew Davis (github.com/andrewsdavis)
-# Updated June 1, 2018
+# Licensed under MIT License
+#
+# Updated June 2, 2018
 
 echo Opening Atom... # Verbose program start
 
