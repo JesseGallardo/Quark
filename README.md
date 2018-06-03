@@ -4,6 +4,5 @@ Ever want to use your favorite editor, but you’re always switching machines? W
 ## Installation
 Installation instructions found [here](https://github.com/andrewsdavis/Atom-Portable/wiki/Installation).
 
-
-
+<br><br>
 #### [Licensed under MIT](https://github.com/andrewsdavis/Atom-Portable/blob/master/LICENSE)
