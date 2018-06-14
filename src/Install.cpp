@@ -6,8 +6,9 @@
  * Updated June 14, 2018
  */
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <iostream>
+#include <fstream>
 #include <string>
 using namespace std;
 
@@ -15,6 +16,7 @@ string installType;
 string LAST_MODIFIED = "6/14/2018";
 string VERSION = "0.7";
 char* atomLatest;
+string installedVersion;
 
 // Linux install process
 void linuxInstall() {
@@ -66,6 +68,7 @@ void confirm() {
 
         if (answer == "Y" || answer == "y") {
             inputting = false;
+            cout << "\n";
         }
         else if (answer == "N" || answer == "n") {
             exit(0);
@@ -88,6 +91,7 @@ void installSelect() {
 
         if (answer == "1") { // Linux Install
             inputting = false;
+            cout << "\n";
             linuxInstall(); // Install Linux Version
         }
         else if (answer == "2") { // Windows Install
@@ -103,9 +107,21 @@ void installSelect() {
 
 // Briefs the user on how to go forward with program
 void done(string installType) {
+    if (installType.compare("Linux") == 0) {
+        string line;
+        ifstream version ("Atom/.Linux-Version");
+
+        while (getline(version, line)) {
+            installedVersion = line;
+        }
+
+        version.close();
+    }
+    else installedVersion = "";
+
     cout << "-------------------------------------------------------------\n"
          << "\n"
-         << "Atom " << atomLatest << " successfully installed.\n"
+         << "Atom " << installedVersion << " successfully installed.\n"
          << "\n"
          << "The installation is complete!\n"
          << "You may now use the Atom executable to launch Atom.\n"
