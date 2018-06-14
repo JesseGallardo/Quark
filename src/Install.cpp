@@ -1,5 +1,5 @@
 /*
- * Atom Portable Installer v0.7
+ * Quark (Atom-Portable) Installer v0.7
  * Created by Andrew Davis (github.com/andrewsdavis)
  * Licensed under MIT License
  *
@@ -23,7 +23,7 @@ void linuxInstall() {
     installType = "Linux";
 
     cout << "Getting latest version of Atom...\n" << "./Linux-Downloader.sh\n";
-    system("wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Linux-Downloader.sh");
+    system("wget https://github.com/andrewsdavis/Quark/raw/master/Linux-Downloader.sh");
     system("chmod u+x Linux-Downloader.sh; ./Linux-Downloader.sh"); // Run Downloader script
     system("rm Linux-Downloader.sh"); // Remove script
 
@@ -43,17 +43,16 @@ void linuxInstall() {
     system("mkdir -p Atom/.atom"); // Create portable .atom folder
     cout << "\n";
 
-    cout << "Getting latest version of Atom-Portable launcher...\n" << "wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Atom.sh\n";
-    system("wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Atom.sh"); // Get launcher executable from Github
+    cout << "Getting latest version of Quark launcher...\n" << "wget https://github.com/andrewsdavis/Quark/raw/master/Quark.sh\n";
+    system("wget https://github.com/andrewsdavis/Quark/raw/master/Atom.sh"); // Get launcher executable from Github
 
     cout << "Adding executable permissions to launcher...\n" << "chmod a+x Atom.sh\n";
-    system("chmod a+x Atom.sh"); // Add executable permissions to the launcher
+    system("chmod a+x Quark.sh"); // Add executable permissions to the launcher
 }
 
 // Starts the program, prints information about the purpose, and asks the user to confirm install
 void confirm() {
-    cout << "Atom Portable Installer\n"
-         << "Version v" + VERSION + "\n"
+    cout << "Quark Installer v" + VERSION + "\n"
          << "Created by Andrew Davis\n"
          << "Last modified: " + LAST_MODIFIED + "\n\n"
          << "This executable will install the Atom editor\n"

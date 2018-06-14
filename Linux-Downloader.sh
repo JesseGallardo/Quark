@@ -1,5 +1,5 @@
 # !/bin/bash
-# Atom Portable Downloader v0.7
+# Quark (Atom-Portable) Downloader v0.7
 # Created by Andrew Davis (github.com/andrewsdavis)
 # Licensed under MIT License
 # Updated June 14, 2018

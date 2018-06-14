@@ -1,9 +1,9 @@
 # !/bin/bash
-# Atom Portable Launcher v0.7
+# Quark (Atom-Portable) Launcher v0.7
 # Created by Andrew Davis (github.com/andrewsdavis)
 # Licensed under MIT License
 #
-# Updated June 5, 2018
+# Updated June 14, 2018
 
 echo Opening Atom... # Verbose program start
 

@@ -1,8 +1,8 @@
-# Atom Portable Makefile
+# Quark (Atom-Portable) Makefile
 # Created by Andrew Davis (github.com/andrewsdavis)
 # Licensed under MIT License
 #
-# Updated June 5, 2018
+# Updated June 14, 2018
 
 I_SRC=src/Install.cpp
 
