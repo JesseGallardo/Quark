@@ -1,26 +1,31 @@
 /*
- * Atom Portable Installer v0.6
+ * Atom Portable Installer v0.7
  * Created by Andrew Davis (github.com/andrewsdavis)
  * Licensed under MIT License
  *
- * Updated June 2, 2018
+ * Updated June 14, 2018
  */
 
-#include <stdlib.h> // system()
-#include <iostream> // cout & cin
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
 #include <string>
 using namespace std;
 
 string installType;
-string LAST_MODIFIED = "6/2/2018";
-string VERSION = "0.6";
+string LAST_MODIFIED = "6/14/2018";
+string VERSION = "0.7";
+char* atomLatest;
+string installedVersion;
 
 // Linux install process
 void linuxInstall() {
     installType = "Linux";
 
-    cout << "Getting latest version of Atom...\n" << "wget https://github.com/atom/atom/releases/download/v1.27.2/atom-amd64.deb\n";
-    system("wget https://github.com/atom/atom/releases/download/v1.27.2/atom-amd64.deb"); // Get Atom v1.27.2 from Github // TODO: Update URL dynamically for new releases
+    cout << "Getting latest version of Atom...\n" << "./Linux-Downloader.sh\n";
+    system("wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Linux-Downloader.sh");
+    system("chmod u+x Linux-Downloader.sh; ./Linux-Downloader.sh"); // Run Downloader script
+    system("rm Linux-Downloader.sh"); // Remove script
 
     cout << "Creating folder structure...\n" << "mkdir -p Atom/Atom-Linux\n";
     system("mkdir -p Atom/Atom-Linux"); // Create directory for files
@@ -63,12 +68,10 @@ void confirm() {
 
         if (answer == "Y" || answer == "y") {
             inputting = false;
+            cout << "\n";
         }
         else if (answer == "N" || answer == "n") {
             exit(0);
-        }
-        else {
-            cout << "\n";
         }
     }
 }
@@ -88,6 +91,7 @@ void installSelect() {
 
         if (answer == "1") { // Linux Install
             inputting = false;
+            cout << "\n";
             linuxInstall(); // Install Linux Version
         }
         else if (answer == "2") { // Windows Install
@@ -97,16 +101,27 @@ void installSelect() {
         else if (answer == "Q" || answer == "q") { // Quit
             exit(0);
         }
-        else {
-            cout << "\n";
-        }
     }
 
 }
 
 // Briefs the user on how to go forward with program
 void done(string installType) {
+    if (installType.compare("Linux") == 0) {
+        string line;
+        ifstream version ("Atom/.Linux-Version");
+
+        while (getline(version, line)) {
+            installedVersion = line;
+        }
+
+        version.close();
+    }
+    else installedVersion = "";
+
     cout << "-------------------------------------------------------------\n"
+         << "\n"
+         << "Atom " << installedVersion << " successfully installed.\n"
          << "\n"
          << "The installation is complete!\n"
          << "You may now use the Atom executable to launch Atom.\n"
