@@ -1,26 +1,30 @@
 /*
- * Atom Portable Installer v0.6
+ * Atom Portable Installer v0.7
  * Created by Andrew Davis (github.com/andrewsdavis)
  * Licensed under MIT License
  *
- * Updated June 2, 2018
+ * Updated June 14, 2018
  */
 
-#include <stdlib.h> // system()
-#include <iostream> // cout & cin
+#include <stdlib.h>
+#include <iostream>
 #include <string>
 using namespace std;
 
 string installType;
-string LAST_MODIFIED = "6/2/2018";
-string VERSION = "0.6";
+string LAST_MODIFIED = "6/14/2018";
+string VERSION = "0.7";
+char* atomLatest;
 
 // Linux install process
 void linuxInstall() {
     installType = "Linux";
 
-    cout << "Getting latest version of Atom...\n" << "wget https://github.com/atom/atom/releases/download/v1.27.2/atom-amd64.deb\n";
-    system("wget https://github.com/atom/atom/releases/download/v1.27.2/atom-amd64.deb"); // Get Atom v1.27.2 from Github // TODO: Update URL dynamically for new releases
+    cout << "Getting latest version of Atom...\n" << "./Linux-Downloader.sh\n";
+    system("wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Linux-Downloader.sh");
+    system("chmod u+x Linux-Downloader.sh; ./Linux-Downloader.sh"); // Run Downloader script
+    system("rm Linux-Downloader.sh"); // Remove script
+    atomLatest = getenv("ATOM_LATEST"); // Store version number
 
     cout << "Creating folder structure...\n" << "mkdir -p Atom/Atom-Linux\n";
     system("mkdir -p Atom/Atom-Linux"); // Create directory for files
@@ -37,6 +41,8 @@ void linuxInstall() {
     cout << "Creating .atom folder...\n" << "mkdir -p Atom/.atom\n";
     system("mkdir -p Atom/.atom"); // Create portable .atom folder
     cout << "\n";
+
+    // Add .LinuxVersion to Atom folder for updater
 
     cout << "Getting latest version of Atom-Portable launcher...\n" << "wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Atom.sh\n";
     system("wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Atom.sh"); // Get launcher executable from Github
@@ -67,9 +73,6 @@ void confirm() {
         else if (answer == "N" || answer == "n") {
             exit(0);
         }
-        else {
-            cout << "\n";
-        }
     }
 }
 
@@ -97,9 +100,6 @@ void installSelect() {
         else if (answer == "Q" || answer == "q") { // Quit
             exit(0);
         }
-        else {
-            cout << "\n";
-        }
     }
 
 }
@@ -107,6 +107,8 @@ void installSelect() {
 // Briefs the user on how to go forward with program
 void done(string installType) {
     cout << "-------------------------------------------------------------\n"
+         << "\n"
+         << "Atom " << atomLatest << " successfully installed.\n"
          << "\n"
          << "The installation is complete!\n"
          << "You may now use the Atom executable to launch Atom.\n"
