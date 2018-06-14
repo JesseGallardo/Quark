@@ -24,7 +24,6 @@ void linuxInstall() {
     system("wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Linux-Downloader.sh");
     system("chmod u+x Linux-Downloader.sh; ./Linux-Downloader.sh"); // Run Downloader script
     system("rm Linux-Downloader.sh"); // Remove script
-    atomLatest = getenv("ATOM_LATEST"); // Store version number
 
     cout << "Creating folder structure...\n" << "mkdir -p Atom/Atom-Linux\n";
     system("mkdir -p Atom/Atom-Linux"); // Create directory for files
@@ -41,8 +40,6 @@ void linuxInstall() {
     cout << "Creating .atom folder...\n" << "mkdir -p Atom/.atom\n";
     system("mkdir -p Atom/.atom"); // Create portable .atom folder
     cout << "\n";
-
-    // Add .LinuxVersion to Atom folder for updater
 
     cout << "Getting latest version of Atom-Portable launcher...\n" << "wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Atom.sh\n";
     system("wget https://github.com/andrewsdavis/Atom-Portable/raw/master/Atom.sh"); // Get launcher executable from Github
