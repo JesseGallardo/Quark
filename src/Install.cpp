@@ -44,9 +44,9 @@ void linuxInstall() {
     cout << "\n";
 
     cout << "Getting latest version of Quark launcher...\n" << "wget https://github.com/andrewsdavis/Quark/raw/master/Quark.sh\n";
-    system("wget https://github.com/andrewsdavis/Quark/raw/master/Atom.sh"); // Get launcher executable from Github
+    system("wget https://github.com/andrewsdavis/Quark/raw/master/Quark.sh"); // Get launcher executable from Github
 
-    cout << "Adding executable permissions to launcher...\n" << "chmod a+x Atom.sh\n";
+    cout << "Adding executable permissions to launcher...\n" << "chmod a+x Quark.sh\n";
     system("chmod a+x Quark.sh"); // Add executable permissions to the launcher
 }
 
