@@ -23,7 +23,7 @@ void linuxInstall() {
     installType = "Linux";
 
     cout << "Getting latest version of Atom...\n" << "./Linux-Downloader.sh\n";
-    system("wget https://github.com/andrewsdavis/Quark/raw/master/Linux-Downloader.sh");
+    system("wget https://github.com/andrewsdavis/Quark/raw/master/Linux-Downloader.sh"); // Get downloader script
     system("chmod u+x Linux-Downloader.sh; ./Linux-Downloader.sh"); // Run Downloader script
     system("rm Linux-Downloader.sh"); // Remove script
 
@@ -88,15 +88,20 @@ void installSelect() {
     while (inputting) {
         getline(cin, answer);
 
-        if (answer == "1") { // Linux Install
+        /* Linux Install */
+        if (answer == "1") {
             inputting = false;
             cout << "\n";
             linuxInstall(); // Install Linux Version
         }
+
+        /* Windows Install */
         else if (answer == "2") { // Windows Install
             cout << "This version is coming soon. Please select another version\n"
                  << "or press (q) to quit.\n";
         }
+
+        /* Quit */
         else if (answer == "Q" || answer == "q") { // Quit
             exit(0);
         }
@@ -108,13 +113,14 @@ void installSelect() {
 void done(string installType) {
     if (installType.compare("Linux") == 0) {
         string line;
-        ifstream version ("Atom/.Linux-Version");
+        ifstream version ("Atom/.Linux-Version"); // Open version file to print version installed (may be deprecated if project becomes 100% C++)
 
+        // Grab the version number from the file and store it in a string
         while (getline(version, line)) {
             installedVersion = line;
         }
 
-        version.close();
+        version.close(); // Close file
     }
     else installedVersion = "";
 
