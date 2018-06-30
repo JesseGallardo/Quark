@@ -31,18 +31,19 @@ void linuxInstall() {
     system("mkdir -p Atom/Atom-Linux"); // Create directory for files
     cout << "\n";
 
-    cout << "Unpacking archive...\n" << "dpkg -x atom-amd64.deb Atom/Atom-Linux\n";
-    system("dpkg -x atom-amd64.deb Atom/Atom-Linux"); // Unpack Atom
+    cout << "Unpacking archive...\n" << "tar -xzf atom-amd64.tar.gz --strip-components=1 -C Atom/Atom-Linux\n";
+    system("tar -xzf atom-amd64.tar.gz --strip-components=1 -C Atom/Atom-Linux"); // Unpack Atom
     cout << "\n";
 
-    cout << "Removing archive...\n" << "rm atom-amd64.deb\n";
-    system("rm atom-amd64.deb"); // Remove package
+    cout << "Removing archive...\n" << "rm atom-amd64.tar.gz\n";
+    system("rm atom-amd64.tar.gz"); // Remove package
     cout << "\n";
 
     cout << "Creating .atom folder...\n" << "mkdir -p Atom/.atom\n";
     system("mkdir -p Atom/.atom"); // Create portable .atom folder
     cout << "\n";
 
+    // TODO: Make launcher in C++
     cout << "Getting latest version of Quark launcher...\n" << "wget https://github.com/andrewsdavis/Quark/raw/master/Quark.sh\n";
     system("wget https://github.com/andrewsdavis/Quark/raw/master/Quark.sh"); // Get launcher executable from Github
 
