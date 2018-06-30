@@ -12,4 +12,4 @@ ATOM_LATEST=$(echo $ATOM_LATEST | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/') # P
 mkdir Atom
 touch Atom/.Linux-Version
 echo $ATOM_LATEST > Atom/.Linux-Version
-wget https://github.com/atom/atom/releases/download/$ATOM_LATEST/atom-amd64.deb # Download latest version of Atom from Github
+wget https://github.com/atom/atom/releases/download/$ATOM_LATEST/atom-amd64.tar.gz # Download latest version of Atom from Github
