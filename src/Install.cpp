@@ -3,7 +3,7 @@
  * Created by Andrew Davis (github.com/andrewsdavis)
  * Licensed under MIT License
  *
- * Updated June 14, 2018
+ * Updated July 1, 2018
  */
 
 #include <cstdlib>
@@ -13,7 +13,7 @@
 using namespace std;
 
 string installType;
-string LAST_MODIFIED = "6/14/2018";
+string LAST_MODIFIED = "07/01/2018";
 string VERSION = "0.7";
 char* atomLatest;
 string installedVersion;
@@ -55,7 +55,8 @@ void linuxInstall() {
 void confirm() {
     cout << "Quark Installer v" + VERSION + "\n"
          << "Created by Andrew Davis\n"
-         << "Last modified: " + LAST_MODIFIED + "\n\n"
+         << "Last modified: " + LAST_MODIFIED + "\n"
+         << "\n"
          << "This executable will install the Atom editor\n"
          << "to the current directory and optimize it for\n"
          << "portablility. Continue (Y/n)?\n";
