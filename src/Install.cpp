@@ -81,6 +81,7 @@ void linuxInstall() {
     cout << "Downloading latest version of Quark launcher for " << installType << "...\n";
     cout << wgetQuarkLatest << "\n";
     system(wgetQuarkLatest); // Download launcher
+    system("chmod a+x ./Quark-Linux"); // Add execute permissions
 }
 
 // Starts the program, prints information about the purpose, and asks the user to confirm install
