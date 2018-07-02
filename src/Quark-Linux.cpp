@@ -1,5 +1,5 @@
 /*
- * Quark (Atom-Portable) Installer v0.7
+ * Quark Launcher v0.7 (Linux)
  * Created by Andrew Davis (github.com/andrewsdavis)
  * Licensed under MIT License
  *

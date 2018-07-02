@@ -1,11 +1,13 @@
-# Quark (Atom-Portable) Makefile
+# Quark Makefile
 # Created by Andrew Davis (github.com/andrewsdavis)
 # Licensed under MIT License
 #
-# Updated June 14, 2018
-
-I_SRC=src/Install.cpp
+# Updated July, 1 2018
 
 Install: Install.cpp
-	cd ..; g++ -g -o Install $(I_SRC)
-	cd ..; chmod a+x Install
+	cd ..; g++ -o Install src/Install.cpp
+	cd ..; chmod u+x Install
+
+Linux: Quark-Linux.cpp
+	cd ..; g++ -o Quark-Linux src/Quark-Linux.cpp
+	cd ..; chmod u+x Quark-Linux
